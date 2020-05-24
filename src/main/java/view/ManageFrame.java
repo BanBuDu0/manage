@@ -2,25 +2,24 @@ package view;
 
 import view.medicine.MedicineFrame;
 import view.patient.PatientFrame;
+import view.prescription.PrescriptionFrame;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
+
 public class ManageFrame extends JFrame {
+
+
     public ManageFrame() {
-        try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-            e.printStackTrace();
-        }
         setVisible(true);
         setTitle("Manage");
         setResizable(false);
         int width = Toolkit.getDefaultToolkit().getScreenSize().width;
         int height = Toolkit.getDefaultToolkit().getScreenSize().height;
         int windowsWidth = 450;
-        int windowsHeight = 300;
+        int windowsHeight = 350;
         setBounds((width - windowsWidth) / 2, (height - windowsHeight) / 2, windowsWidth, windowsHeight);
         JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -28,7 +27,7 @@ public class ManageFrame extends JFrame {
         contentPane.setLayout(null);
 
 
-        JLabel jl3=new JLabel(new ImageIcon("img/title.bmp"));
+        JLabel jl3 = new JLabel(new ImageIcon("img/title.bmp"));
         jl3.setBounds(20, 20, 150, 150);
         contentPane.add(jl3);
 
@@ -41,18 +40,25 @@ public class ManageFrame extends JFrame {
         JButton button = new JButton("病人管理");
         button.addActionListener(e -> {
             new PatientFrame().setVisible(true);
-//            new PatientFrame().setVisible(true);
             ManageFrame.this.setVisible(false);
         });
         button.setBounds(150, 85, 100, 44);
         contentPane.add(button);
 
-        JButton button_1 = new JButton("仓库管理");
-        button_1.addActionListener(e -> {
+        JButton button1 = new JButton("仓库管理");
+        button1.addActionListener(e -> {
             new MedicineFrame().setVisible(true);
             ManageFrame.this.setVisible(false);
         });
-        button_1.setBounds(150, 150, 100, 44);
-        contentPane.add(button_1);
+        button1.setBounds(150, 150, 100, 44);
+        contentPane.add(button1);
+
+        JButton button2 = new JButton("药方管理");
+        button2.addActionListener(e -> {
+            new PrescriptionFrame().setVisible(true);
+            ManageFrame.this.setVisible(false);
+        });
+        button2.setBounds(150, 215, 100, 44);
+        contentPane.add(button2);
     }
 }

@@ -42,7 +42,7 @@ public class PatientFormFrame extends JFrame {
         contentPane.add(label_1);
 
         textField = new JTextField();
-        textField.setBounds(87, 68, 250, 21);
+        textField.setBounds(87, 68, 250, 30);
         contentPane.add(textField);
         textField.setColumns(10);
 
@@ -51,7 +51,7 @@ public class PatientFormFrame extends JFrame {
         contentPane.add(label_2);
 
         textField_1 = new JTextField();
-        textField_1.setBounds(87, 125, 250, 21);
+        textField_1.setBounds(87, 125, 250, 30);
         contentPane.add(textField_1);
         textField_1.setColumns(10);
 
@@ -60,7 +60,7 @@ public class PatientFormFrame extends JFrame {
         contentPane.add(label_3);
 
         textField_2 = new JTextField();
-        textField_2.setBounds(87, 182, 250, 21);
+        textField_2.setBounds(87, 182, 250, 30);
         contentPane.add(textField_2);
         textField_2.setColumns(10);
 
@@ -71,12 +71,12 @@ public class PatientFormFrame extends JFrame {
         ButtonGroup g = new ButtonGroup();
 
         JRadioButton b1 = new JRadioButton("男");
-        b1.setBounds(87, 239, 54, 21);
+        b1.setBounds(87, 239, 54, 30);
         b1.addActionListener(arg0 -> isMan = true);
         contentPane.add(b1);
 
         JRadioButton b2 = new JRadioButton("女");
-        b2.setBounds(151, 239, 100, 21);
+        b2.setBounds(151, 239, 100, 30);
         b2.addActionListener(arg0 -> isMan = false);
         contentPane.add(b2);
         g.add(b1);
@@ -87,7 +87,7 @@ public class PatientFormFrame extends JFrame {
         contentPane.add(label_6);
 
         textField_5 = new JTextField();
-        textField_5.setBounds(87, 296, 250, 21);
+        textField_5.setBounds(87, 296, 250, 30);
         contentPane.add(textField_5);
         textField_5.setColumns(10);
 
@@ -144,21 +144,20 @@ public class PatientFormFrame extends JFrame {
             try {
                 age = Integer.parseInt(textField_5.getText());
                 patient.setAge(age);
+                boolean s = patientService.add(patient);
+                if (s) {
+                    JOptionPane.showMessageDialog(null, "添加成功");
+                    textField.setText("");
+                    textField_1.setText("");
+                    textField_2.setText("");
+                    textField_5.setText("");
+                } else {
+                    JOptionPane.showMessageDialog(null, "添加失败");
+                }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "输入数字的年龄");
             }
         }
-        boolean s = patientService.add(patient);
-        if (s) {
-            JOptionPane.showMessageDialog(null, "添加成功");
-            textField.setText("");
-            textField_1.setText("");
-            textField_2.setText("");
-            textField_5.setText("");
-        } else {
-            JOptionPane.showMessageDialog(null, "添加失败");
-        }
-
     }
 
     private void update() {

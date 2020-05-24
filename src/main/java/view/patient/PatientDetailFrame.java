@@ -39,6 +39,7 @@ public class PatientDetailFrame extends JFrame {
     private final Map<String, Double> medicineUsed = new HashMap<>();
     private final RecipelService recipelService = new RecipelService();
 
+
     public PatientDetailFrame(Patient patient) {
         setTitle("处方");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -48,7 +49,6 @@ public class PatientDetailFrame extends JFrame {
         int windowsHeight = 430;
         setBounds((width - windowsWidth) / 2, (height - windowsHeight) / 2, windowsWidth, windowsHeight);
         JPanel contentPane = new JPanel();
-//        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
@@ -68,7 +68,7 @@ public class PatientDetailFrame extends JFrame {
         JLabel jAge = new JLabel("");
         String ageString = "年龄： " + patient.getAge();
         jAge.setText(ageString);
-        jAge.setBounds(400, 15, 70, 23);
+        jAge.setBounds(400, 15, 100, 23);
         contentPane.add(jAge);
 
         JLabel jGender = new JLabel("");
@@ -82,6 +82,7 @@ public class PatientDetailFrame extends JFrame {
         scrollPane.setBounds(10, 45, 115, 250);
 
         table = new JTable(new DefaultTableModel()) {
+            @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
@@ -175,6 +176,7 @@ public class PatientDetailFrame extends JFrame {
         JScrollPane scrollPane2 = new JScrollPane();
         scrollPane2.setBounds(580, 80, 200, 240);
         table2 = new JTable(new DefaultTableModel()) {
+            @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
             }

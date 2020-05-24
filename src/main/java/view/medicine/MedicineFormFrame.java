@@ -39,7 +39,7 @@ public class MedicineFormFrame extends JFrame {
         contentPane.add(label_1);
 
         textField = new JTextField();
-        textField.setBounds(125, 68, 155, 21);
+        textField.setBounds(125, 68, 155, 30);
         contentPane.add(textField);
         textField.setColumns(10);
 
@@ -48,7 +48,7 @@ public class MedicineFormFrame extends JFrame {
         contentPane.add(label_2);
 
         textField_1 = new JTextField();
-        textField_1.setBounds(125, 125, 155, 21);
+        textField_1.setBounds(125, 125, 155, 30);
         contentPane.add(textField_1);
         textField_1.setColumns(10);
 
@@ -82,7 +82,7 @@ public class MedicineFormFrame extends JFrame {
             contentPane.add(label_3);
 
             textField_2 = new JTextField();
-            textField_2.setBounds(125, 299, 155, 21);
+            textField_2.setBounds(125, 299, 155, 30);
             contentPane.add(textField_2);
             textField_2.setColumns(10);
         }
@@ -91,7 +91,7 @@ public class MedicineFormFrame extends JFrame {
         contentPane.add(label_4);
 
         textField_3 = new JTextField();
-        textField_3.setBounds(125, 185, 155, 21);
+        textField_3.setBounds(125, 185, 155, 30);
         contentPane.add(textField_3);
         textField_3.setColumns(10);
 
@@ -100,7 +100,7 @@ public class MedicineFormFrame extends JFrame {
         contentPane.add(label_5);
 
         textField_4 = new JTextField();
-        textField_4.setBounds(125, 242, 155, 21);
+        textField_4.setBounds(125, 242, 155, 30);
         contentPane.add(textField_4);
         textField_4.setColumns(10);
 

@@ -1,10 +1,10 @@
-package view.medicine;
+package view.prescription;
 
 import model.Medicine;
 import service.MedicineService;
 import utils.TipBox;
-import utils.TipScroll;
 import view.ManageFrame;
+import view.medicine.MedicineFormFrame;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -14,7 +14,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MedicineFrame extends JFrame {
+public class PrescriptionFrame extends JFrame {
     private JTable table;
     private String[] columnCount = {"药物名称", "药物数量 kg", "进价 kg/￥", "售价 g/￥"};
     public static Medicine medicineSelected = null;
@@ -22,7 +22,7 @@ public class MedicineFrame extends JFrame {
     private MedicineService medicineService = new MedicineService();
     private JTextField textField;
 
-    public MedicineFrame() {
+    public PrescriptionFrame() {
         setTitle("药物");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         int width = Toolkit.getDefaultToolkit().getScreenSize().width;
@@ -77,7 +77,7 @@ public class MedicineFrame extends JFrame {
         JButton button_4 = new JButton("返回");
         button_4.addActionListener(e -> {
             new ManageFrame().setVisible(true);
-            MedicineFrame.this.setVisible(false);
+            PrescriptionFrame.this.setVisible(false);
         });
         button_4.setBounds(550, 22, 93, 30);
         contentPane.add(button_4);
